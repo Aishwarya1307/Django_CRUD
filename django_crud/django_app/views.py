@@ -12,9 +12,13 @@ def home(request):
         {'name': 'john', 'age': 18},
         {'name': 'kavya', 'age': 20},
     ]
-    return render(request, "Home/index.html", context={"peoples": peoples})
+    return render(request, "Home/Home.html", context={"peoples": peoples})
 
 
-def login(request):
-    return render(request, "Home/index.html")
+def customer(request):
+    return render(request, "Home/all_customers.html")
     # return HttpResponse("login suceessfully!!")
+
+
+def add_new(request):
+    return render(request,"Home/add_new.html")
