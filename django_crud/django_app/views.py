@@ -1,23 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-
+from django.db import connection
+import json
 
 def home(request):
-    peoples = [
-        {'name': 'Abhijeet', 'age': 26},
-        {'name': 'Ajinkya', 'age': 24},
-        {'name': 'Riya', 'age': 17},
-        {'name': 'aryan', 'age': 30},
-        {'name': 'john', 'age': 18},
-        {'name': 'kavya', 'age': 20},
-    ]
-    return render(request, "Home/Home.html", context={"peoples": peoples})
+    return render(request, "Home/Home.html")
 
 
 def customer(request):
-    return render(request, "Home/all_customers.html")
-    # return HttpResponse("login suceessfully!!")
+    with connection.cursor() as cursor:
+        cursor.execute("select * from Customer_details")
+        context =  cursor.fetchone()
+        print(context)
+    return render(request, "Home/all_customers.html" , context={"customers": context})
 
 
 def add_new(request):

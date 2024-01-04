@@ -8,5 +8,22 @@
 </head>
 <body>
     <h1>Hello world</h1>
+    {% block content %}
+    {% for x in customers %}
+    {{x}}
+    {% endfor %}
+    {% endblock content %}
+
+    <table>
+            <tr>
+                <th>Customer Name</th>
+                <th>Gmail</th>
+                <th>Mobile Number</th>
+                <th>Password</th>
+                <th>City</th>
+            </tr>
+            
+        
+    </table>
 </body>
 </html>
