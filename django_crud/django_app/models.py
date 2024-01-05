@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class CRUD(models.Model):
+class CUSTOMER_INFO(models.Model):
     customer_name = models.CharField(max_length=50)
     Email_id = models.EmailField()
     Phone_number = models.IntegerField()

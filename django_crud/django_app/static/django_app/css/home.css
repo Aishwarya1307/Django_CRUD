@@ -1,0 +1,51 @@
+
+.bg {
+    /* The image used */
+    background-image: url("/django_crud/django_app/static/django_app/images/dbs.jpeg");
+
+    /* Full height */
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+li {
+    display: inline-block;
+    font-size: 100%;
+    color:white;	
+    margin-right: 100;
+    
+} 
+
+h1 {
+    text-align: center;
+}
+
+.main-nav {
+         display: block;
+    
+       }
+.push   {
+        margin-left: auto;
+    }
+
+.container {
+      display: flex grid;
+      padding: 1rem;
+    }
+
+ul {
+    background-color: black;
+    border-radius: 20%;
+}
+
+a  {
+    font-size:large;
+    margin-right:20px
+}
+
+a:hover { 
+        background-color: rgb(243, 237, 237);
+        background-size: 0vmin;
+    } 
