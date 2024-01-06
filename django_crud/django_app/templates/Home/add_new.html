@@ -13,7 +13,7 @@
         <i class="fas fa-graduation-cap"></i>
         <h1><i>Customer Registration</i></h1>
       </div>
-      <form action="" href="/Home.html" method="post">
+      <form action="" href="" method="post">
         {% csrf_token %}
         <div class="title">
           <i class="fas fa-pencil-alt"></i> 
@@ -21,9 +21,9 @@
         </div>
         <div class="info">
           <input class="fname" type="text" name="customer_name" placeholder="Full name" autocomplete="off" required>
-          <input type="text" name="Email" placeholder="Email" autocomplete="off" required>
-          <input type="tel" name="Phone number" placeholder="Phone number" autocomplete="off" maxlength="10" required>
-          <input type="password" name="Password" placeholder="Password" autocomplete="off" required>
+          <input type="text" name="email" placeholder="Email" autocomplete="off" required>
+          <input type="number" name="phone number" placeholder="Phone number" autocomplete="off" maxlength="10" required>
+          <input type="password" name="password" placeholder="Password" autocomplete="off" required>
           <select required name="city"> 
             <option value="">--Select Customer From--</option>
             <option value="Udaypur">Udaypur</option>

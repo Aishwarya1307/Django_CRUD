@@ -77,12 +77,17 @@ WSGI_APPLICATION = 'django_crud.wsgi.application'
 
 DATABASES =  {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'local_testing_db',
-        'USER': 'root',
-        'PASSWORD': 'PFH#23kgrw9',
+
+        # 'USER': 'root',
+        # 'PASSWORD': 'PFH#23kgrw9',
+        # 'ENGINE': 'django.db.backends.mysql',
+        'USER':'postgres',
+        'PASSWORD':'password',
         'HOST': 'localhost',
-        'PORT': '3306'
+        # 'PORT': '3306'
+        'port':'5432'
     }
 }
 
