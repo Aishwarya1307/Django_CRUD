@@ -49,7 +49,7 @@ def edit(request,id):
             cursor.execute(f"select * from django_app_customer_info where id={id}")
             result = cursor.fetchall()
             logger.debug(result)
-        return render(request, "/" , context={"customer":result})
+        return render(request, "Home/" , context={"customer":result})
     
     except HTTPException as e:
         logger.debug(f'{e}')

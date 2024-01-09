@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Educational registration form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'django_app/css/style.css' %}">
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-graduation-cap"></i>
+        <h1><i>Customer Registration</i></h1>
+      </div>
+      <form action="" href="" method="post">
+        {% csrf_token %}
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Register here</h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="customer_name" placeholder={{customer.1}} autocomplete="off" required>
+          <input type="text" name="email" placeholder="Email" autocomplete="off" required>
+          <input type="number" name="phone number" placeholder="Phone number" autocomplete="off" maxlength="10" required>
+          <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+          <select required name="city"> 
+            <option value="">--Select Customer From--</option>
+            <option value="Udaypur">Udaypur</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Goa">Goa</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="manali">manali</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+          </select>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkbox" required><span>I agree to the Privacy policy.</span>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
