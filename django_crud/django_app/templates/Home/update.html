@@ -20,25 +20,27 @@
           <h2>Register here</h2>
         </div>
         <div class="info">
-          <input class="fname" type="text" name="customer_name" placeholder={{customer.1}} autocomplete="off" required>
-          <input type="text" name="email" placeholder="Email" autocomplete="off" required>
-          <input type="number" name="phone number" placeholder="Phone number" autocomplete="off" maxlength="10" required>
-          <input type="password" name="password" placeholder="Password" autocomplete="off" required>
-          <select required name="city"> 
-            <option value="">--Select Customer From--</option>
-            <option value="Udaypur">Udaypur</option>
-            <option value="Maharashtra">Maharashtra</option>
-            <option value="Goa">Goa</option>
-            <option value="Uttarakhand">Uttarakhand</option>
-            <option value="manali">manali</option>
-            <option value="Bangalore">Bangalore</option>
-            <option value="Ahmedabad">Ahmedabad</option>
-          </select>
+          {% for x in customer %}
+              <input class="fname" type="text" name="customer_name" value="{{x.1}}" autocomplete="off" required>
+              <input type="text" name="email" placeholder="Email" value="{{x.2}}" autocomplete="off" required>
+              <input type="number" name="phone number" placeholder="Phone number" value="{{x.3}}"  autocomplete="off" maxlength="10" required>
+              <input type="password" name="password" placeholder="Password" value="{{x.4}}" autocomplete="off" required>
+              <select required name="city" value="{{x.5}}" > 
+                <option value="">{{x.5}}</option>
+                <option value="Udaypur">Udaypur</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Goa">Goa</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="manali">manali</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+              </select>
+          {% endfor %}
         </div>
         <div class="checkbox">
           <input type="checkbox" name="checkbox" required><span>I agree to the Privacy policy.</span>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">Update</button>
       </form>
     </div>
   </body>

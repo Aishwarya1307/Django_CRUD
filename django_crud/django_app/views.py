@@ -1,5 +1,5 @@
 from http.client import HTTPException
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.db import connection
 from .models import CUSTOMER_INFO
 from datetime import datetime
@@ -35,6 +35,7 @@ def add_new(request):
 
             new_customer = CUSTOMER_INFO(customer_name = customer_name ,email_id= email,phone_number = phone_number,password= password, city=city, created_time= str(datetime.now()))
             new_customer.save()
+            return redirect("all_customers")
         return render(request,"Home/add_new.html",{})
 
     except HTTPException as e:
@@ -44,12 +45,21 @@ def add_new(request):
 
 def edit(request,id):
     try:
+        if request.method == "POST":
+            customer_name = request.POST['customer_name']
+            email = request.POST['email']
+            phone_number = request.POST['phone number']
+            password = request.POST['password']
+            city = request.POST['city']
 
+            new_customer = CUSTOMER_INFO(customer_name = customer_name ,email_id= email,phone_number = phone_number,password= password, city=city, created_time= str(datetime.now()))
+            new_customer.upd
+            return redirect("all_customers")
         with connection.cursor() as cursor:
             cursor.execute(f"select * from django_app_customer_info where id={id}")
             result = cursor.fetchall()
             logger.debug(result)
-        return render(request, "Home/" , context={"customer":result})
+        return render(request, "Home/update.html" , context={"customer":result})
     
     except HTTPException as e:
         logger.debug(f'{e}')
@@ -59,7 +69,8 @@ def delete(request,id):
     try:
         with connection.cursor() as cursor:
             cursor.execute(f"delete from django_app_customer_info where id={id}")
-        return redirect('/')
+        return redirect("all_customers")
+        
         
 
     except HTTPException as e:
